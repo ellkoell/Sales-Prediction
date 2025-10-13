@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Prediction</title>
+
+    <!-- Bootstrap richtig verknüpft -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+
+<body class="container mt-5">
+<h1 class="mb-4">Sales Prediction</h1>
+
+<form method="post" action="">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="mb-3">
+                <label class="form-label">TV-Budget (in 1000 Dollar):</label>
+                <input type="number" class="form-control"  min="1" max="999" name="tv">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Radio-Budget (in 1000 Dollar):</label>
+                <input type="number" class="form-control"min="1" max="999" name="radio">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Zeitung-Budget (in 1000 Dollar):</label>
+                <input type="number" class="form-control" min="1" max="999" name="newspaper">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Vorhersage der Umsätze</button>
+        </div>
+    </div>
+</form>
+
+<?php if ($result !== ""): ?>
+<p class="mt-3 alert alert-success">Das Ergebnis lautet: <?= $result ?></p>
+<?php endif; ?>
+
+<script src="index.js"></script>
+</body>
+</html>
