@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  app:
+    container_name: SalesPred
+    build: .
+    ports:
+      - "5000:5000"  # Map container's port 5000 to host's port 5000
+    volumes:
+      - .:/app  # Mount the current directory on the host to /app in the container
+    environment:
+      - PYTHONUNBUFFERED=1  # Optional, ensures Python output is sent directly to the terminal
+    command: python ./api.py  # Ensure the command is executed correctly
